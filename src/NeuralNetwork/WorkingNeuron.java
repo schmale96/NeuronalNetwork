@@ -8,7 +8,7 @@ import java.util.List;
 public class WorkingNeuron extends Neuron {
 
     private List<Connection> connections = new ArrayList<>();
-    private ActivationFunction activationFunction = ActivationFunction.ActivationHyperbolicTangent;
+    private ActivationFunction activationFunction = ActivationFunction.ActivationIdentity;
 
 
     @Override
@@ -28,6 +28,16 @@ public class WorkingNeuron extends Neuron {
     public void addConnection(Connection c) {
 
         connections.add(c);
+    }
+
+    public void deltaLearning(float epsilon, float smallDelta) {
+
+        for(int i = 0; i < connections.size(); i++){
+
+            float bigDelta = epsilon * smallDelta * connections.get(i).getValue();
+            connections.get(i).addWeigth(bigDelta);
+        }
+
     }
 
 }

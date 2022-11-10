@@ -36,6 +36,30 @@ public class NeuralNetwork {
     }
 
 
+    public void deltaLearning(float[] shoulds, float epsilon) {
+
+        if(shoulds.length != outputNeurons.size()) {
+
+            throw new IllegalArgumentException();
+        }
+
+        if(hiddenNeurons.size() != 0) {
+
+            throw new IllegalStateException();
+
+        }
+
+        for(int i = 0; i < shoulds.length; i++) {
+
+            float smallDelta = shoulds[i] - outputNeurons.get(i).getValue();
+
+            outputNeurons.get(i).deltaLearning(epsilon, smallDelta);
+
+        }
+
+    }
+
+
     public void createFullMesh() {
 
         if (hiddenNeurons.size() == 0) {

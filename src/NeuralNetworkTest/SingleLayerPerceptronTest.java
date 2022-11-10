@@ -5,7 +5,7 @@ import NeuralNetwork.InputNeuron;
 import NeuralNetwork.WorkingNeuron;
 
 public class SingleLayerPerceptronTest {
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
 
         NeuralNetwork nn = new NeuralNetwork();
 
@@ -23,9 +23,7 @@ public class SingleLayerPerceptronTest {
                          0,0,0,0,
                          0,0,0,0,
 
-                          0,0,0
-
-
+                          10,0,0
         );
 
         i1.setValue(1);
@@ -34,5 +32,5 @@ public class SingleLayerPerceptronTest {
         i4.setValue(4);
 
         System.out.println(o1.getValue());
-    }
+    }*/
 }

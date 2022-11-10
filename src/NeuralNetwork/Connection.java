@@ -18,4 +18,9 @@ public class Connection {
 
     }
 
+    public void addWeigth(float weightDelta) {
+
+        weight += weightDelta;
+
+    }
 }
